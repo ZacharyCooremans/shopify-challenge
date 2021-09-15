@@ -19,7 +19,9 @@ function Container() {
 
     return (
         <div>
-            <h1>TEST</h1>
+            <h1>{nasaData.title}</h1>
+            <img src={nasaData.url} alt={nasaData.url}></img>
+            <p>{nasaData.explanation}</p>
         </div>
     )
 }
