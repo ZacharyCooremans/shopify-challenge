@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import Like from './Like'
+
 
 function Container() {
     const [nasaData, setNasaData] = useState([])
@@ -22,6 +24,7 @@ function Container() {
             <h1>{nasaData.title}</h1>
             <img src={nasaData.url} alt={nasaData.url}></img>
             <p>{nasaData.explanation}</p>
+            <Like />
         </div>
     )
 }
