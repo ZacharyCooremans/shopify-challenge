@@ -3,8 +3,9 @@ import {useState} from 'react'
 function Like() {
     const [toggle, setToggle] = useState(false)
     const [like, setLike] = useState(0)
-
+    
     const addLike = () => {
+
         setToggle(!toggle)
         if(toggle === false){
             let newCount = like + 1
