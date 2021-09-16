@@ -25,13 +25,13 @@ function Container() {
         return <h1>Loading...</h1>
     } else{
         return (
-            <div>
+            <Contain>
                 <h1>{nasaData.title}</h1>
                 <p>{nasaData.date}</p>
                 <Image src={nasaData.url} alt={nasaData.url}></Image>
                 <Des>{nasaData.explanation}</Des>
                 <Like />
-            </div>
+            </Contain>
         )
     }
 }
@@ -47,4 +47,10 @@ const Des = styled.p`
 const Image = styled.img`
     width: 50%;
     height: 50%;
+`
+
+const Contain = styled.div`
+    border: 2px solid red;
+    background-color: grey;
+    padding-bottom: 5%;
 `
