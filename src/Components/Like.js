@@ -1,27 +1,33 @@
 import {useState} from 'react'
 
 function Like() {
-    const [toggle, setToggle] = useState(false)
-    const [like, setLike] = useState(0)
+    const LikedStorage = localStorage.getItem('toggled')
+    const LikesStorage = localStorage.getItem('Likes')
+    const [toggle, setToggle] = useState(LikedStorage)
+    const [Likes, setLikes] = useState(LikesStorage)
     
     const addLike = () => {
-
-        setToggle(!toggle)
-        if(toggle === false){
-            let newCount = like + 1
-            setLike(newCount)
-        }
-        else{
-            let newCount = like - 1
-            setLike(newCount)
-        }
+        setToggle(true)
+        setLikes(parseInt(LikesStorage) + 1)
     }
+    
+    const disLike = () => {
+        setToggle(false)
+        setLikes(parseInt(LikesStorage) - 1)
+    } 
 
-    const label = toggle ? 'Unlike' : 'Like'
+    localStorage.setItem('Likes', Likes)
+    localStorage.setItem('toggled', toggle)
 
-    return (
-        <button onClick={addLike}>{label} {like}</button>
-    )
+    if(LikedStorage === 'false'){
+        return(
+            <button onClick={addLike}>Like {Likes}</button>
+        )
+    } else if(LikedStorage === 'true'){
+        return(
+            <button onClick={disLike}>Unlike: {Likes}</button>
+        )
+    } 
 }
 
 export default Like
