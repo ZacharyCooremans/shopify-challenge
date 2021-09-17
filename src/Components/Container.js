@@ -50,7 +50,8 @@ const Image = styled.img`
 `
 
 const Contain = styled.div`
-    border: 2px solid red;
+border: 1px solid grey;
     background-color: grey;
     padding-bottom: 5%;
+
 `
