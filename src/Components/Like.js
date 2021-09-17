@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
 function Like() {
     const [toggle, setToggle] = useState(false)
@@ -6,28 +6,27 @@ function Like() {
     
     const addLike = () => {
         setToggle(!toggle)
-        localStorage.setItem('toggled', toggle)
+        localStorage.setItem('toggled', true)
         setLikes(Likes + 1)
     }
     
     const disLike = () => {
         setToggle(!toggle)
-        localStorage.setItem('toggled', toggle)
+        localStorage.setItem('toggled', false)
         setLikes(Likes - 1)
     } 
-    useEffect(() => {
-    }, [])
+
     const LikedStorage = localStorage.getItem('toggled')
 
-    if(LikedStorage === 'false'){
-        return(
-            <button onClick={addLike}>Like {Likes}</button>
-        )
-    } else if(LikedStorage === 'true'){
+    if(LikedStorage === 'true'){
         return(
             <button onClick={disLike}>Unlike: {Likes}</button>
         )
-    } 
+    } else{
+        return(
+            <button onClick={addLike}>Like {Likes}</button>
+        )
+    }
 }
 
 export default Like
