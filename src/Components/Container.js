@@ -11,9 +11,10 @@ function Container() {
 
     useEffect(() => {
         axios
-        .get('https://api.nasa.gov/planetary/apod?api_key=xfvQms5mLeM3dN1rIaumNprPgH8ZObSOBrjTuDGP')
+        .get('https://api.nasa.gov/planetary/apod?api_key=c9nJvvvAsHbWJki1qQ63RIbttZVgDjgVK7100gc6')
         .then((res) => {
             setNasaData(res.data)
+            console.log(res)
             setLoading(true)
         })
         .catch((err) => {
@@ -23,8 +24,9 @@ function Container() {
 
     if (loading === false){
         return <h1>Loading...</h1>
-    } else{
-        return (
+    }
+    return (
+        <>
             <Contain>
                 <h1>{nasaData.title}</h1>
                 <p>{nasaData.date}</p>
@@ -32,9 +34,10 @@ function Container() {
                 <Des>{nasaData.explanation}</Des>
                 <Like />
             </Contain>
-        )
-    }
+        </>
+    )
 }
+
 
 export default Container
 
@@ -50,7 +53,7 @@ const Image = styled.img`
 `
 
 const Contain = styled.div`
-border: 1px solid grey;
+    border: 1px solid grey;
     background-color: grey;
     padding-bottom: 5%;
 
