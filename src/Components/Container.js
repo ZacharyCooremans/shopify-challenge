@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Like from './Like'
+import ReactPlayer from 'react-player'
 
 
 function Container() {
@@ -30,7 +31,11 @@ function Container() {
             <Contain>
                 <h1>{nasaData.title}</h1>
                 <p>{nasaData.date}</p>
-                <Image src={nasaData.url} alt={nasaData.url}></Image>
+                {
+                    nasaData.media_type === 'video' ? 
+                    <Video><ReactPlayer url={nasaData.url} width='60rem' height='35rem' /> </Video> : 
+                    <Image src={nasaData.url} alt={nasaData.url}></Image> 
+                }
                 <Des>{nasaData.explanation}</Des>
                 <Like />
             </Contain>
@@ -51,10 +56,12 @@ const Image = styled.img`
     width: 50%;
     height: 50%;
 `
+const Video = styled.div`
+    padding-left: 28%;
+`
 
 const Contain = styled.div`
     border: 1px solid grey;
     background-color: grey;
     padding-bottom: 5%;
-
 `
