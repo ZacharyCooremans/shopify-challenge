@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.button-like {
+  background-color: green;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-dislike {
+  background-color: red;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+}
