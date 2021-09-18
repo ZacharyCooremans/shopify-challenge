@@ -2,25 +2,27 @@ import {useState} from 'react'
 import { GiThumbUp, GiThumbDown } from "react-icons/gi";
 
 
-function Like() {
+function Like(props) {
+    const {like} = props
+
     const [toggle, setToggle] = useState(false)
     const [Likes, setLikes] = useState(635)
     
     const addLike = () => {
         setToggle(!toggle)
-        localStorage.setItem('toggled', true)
+        localStorage.setItem(like, true)
         setLikes(Likes + 1)
     }
     
     const disLike = () => {
         setToggle(!toggle)
-        localStorage.setItem('toggled', false)
+        localStorage.setItem(like, false)
         setLikes(Likes - 1)
     } 
 
-    const LikedStorage = localStorage.getItem('toggled')
+    const newLiked = localStorage.getItem(like)
 
-    if(LikedStorage === 'true'){
+    if(newLiked === 'true'){
         return(
             <div className='Like'>
                 <GiThumbDown className='icon' />

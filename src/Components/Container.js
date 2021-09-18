@@ -15,7 +15,6 @@ function Container() {
         .get('https://api.nasa.gov/planetary/apod?api_key=c9nJvvvAsHbWJki1qQ63RIbttZVgDjgVK7100gc6')
         .then((res) => {
             setNasaData(res.data)
-            console.log(res)
             setLoading(true)
         })
         .catch((err) => {
@@ -37,7 +36,7 @@ function Container() {
                     <Image src={nasaData.url} alt={nasaData.url}></Image> 
                 }
                 <Des>{nasaData.explanation}</Des>
-                <Like />
+                <Like nasaData={nasaData} like={nasaData.title}/>
             </Contain>
         </>
     )
