@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import MarsCard from './MarsCard'
 import styled from 'styled-components'
-import Like from './Like'
 
 function Mars() {
     const [marsData, setMarsData] = useState([])
@@ -30,7 +29,6 @@ function Mars() {
                     return(
                         <Contain>
                             <MarsCard key={mars.id} mars={mars}/>
-                            <Like />
                         </Contain>
                     )
                 })}
