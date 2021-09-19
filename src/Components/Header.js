@@ -1,5 +1,6 @@
 import {useHistory} from 'react-router-dom'
 import styled from 'styled-components'
+import { FaArrowRight } from "react-icons/fa";
 
 const Header = () => {
     const history = useHistory()
@@ -10,8 +11,18 @@ const Header = () => {
                 <h1>Zachary Cooremans Nasa project</h1>
             </Left>
             <Right>
-                <h1 onClick={() => history.push('/')}>Picture of the day</h1>
-                <h1 onClick={() => history.push('/Mars')}>50th Anniversary</h1>
+                <div className='button' onClick={() => history.push('/')}>
+                    <p className='btnText'>Picture of the day</p>
+                    <div className='btnTwo'> 
+                        <FaArrowRight className='btnText2' />
+                    </div>
+                </div>
+                <div className='button' onClick={() => history.push('/Mars')}> 
+                    <p className='btnText'>50th Anniversary</p>
+                    <div className='btnTwo'> 
+                        <FaArrowRight className='btnText2' />
+                    </div>
+                </div>
             </Right>
         </Container>
     )
