@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import { GiThumbUp, GiThumbDown } from "react-icons/gi";
+import { GiThumbUp } from "react-icons/gi";
+import { FaArrowRight } from "react-icons/fa";
 
 
 function Like(props) {
@@ -24,16 +25,20 @@ function Like(props) {
 
     if(newLiked === 'true'){
         return(
-            <div className='Like'>
-                <GiThumbDown className='icon' />
-                <button className='button-like hover' onClick={disLike}>Unlike: {Likes}</button>
+            <div className='button' onClick={disLike}>
+                <p className='btnText'>Liked: {Likes}</p>
+                <div className='btnTwo'>
+                    <GiThumbUp className='btnText2' />
+                </div>
             </div>
         )
     } else{
         return(
-            <div className='Dislike'>
-                <GiThumbUp className='icon'/>
-                <button className='button-dislike hover' onClick={addLike}>Like: {Likes}</button>
+            <div className='button' onClick={addLike}>
+                <p className='btnText'>Like: {Likes}</p>
+                <div className='btnTwo'>
+                    <FaArrowRight className='btnText2' />
+                </div>
             </div>
         )
     }

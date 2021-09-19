@@ -11,7 +11,7 @@ const Header = () => {
             </Left>
             <Right>
                 <h1 onClick={() => history.push('/')}>Picture of the day</h1>
-                <h1 onClick={() => history.push('/Mars')}>Rover</h1>
+                <h1 onClick={() => history.push('/Mars')}>50th Anniversary</h1>
             </Right>
         </Container>
     )
