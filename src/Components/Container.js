@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import Like from './Like'
 import ReactPlayer from 'react-player'
+import Footer from './Footer'
 
 
 function Container() {
@@ -37,6 +38,7 @@ function Container() {
                 }
                 <Des>{nasaData.explanation}</Des>
                 <Like nasaData={nasaData} like={nasaData.title}/>
+                <Footer />
             </Contain>
         </>
     )
@@ -47,8 +49,9 @@ export default Container
 
 const Des = styled.p`
     display: flex;
-    width: 70%;
-    margin-left: 15%;
+    width: 50%;
+    margin-left: 25%;
+    font-size: 1.5rem;
 `
 
 const Image = styled.img`

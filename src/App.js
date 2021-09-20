@@ -12,7 +12,7 @@ function App() {
       </div>
 
       <Switch> 
-        <Route path='/Mars'>
+        <Route path='/Anniversary'>
           <Mars />
         </Route>
         <Route path='/'>
