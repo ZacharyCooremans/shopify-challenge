@@ -32,7 +32,6 @@ export default Header
 
 const Container = styled.div`
     display: flex;
-    background-color: honeydew;
 `
 const Left = styled.div`
     width: 25%

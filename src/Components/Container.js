@@ -46,9 +46,9 @@ function Container() {
 export default Container
 
 const Des = styled.p`
-    display: flex;
-    width: 70%;
-    margin-left: 15%;
+    font-size: 1.5rem;
+    width: 80%;
+    margin-left: 10%;
 `
 
 const Image = styled.img`
@@ -60,7 +60,5 @@ const Video = styled.div`
 `
 
 const Contain = styled.div`
-    border: 1px solid grey;
-    background-color: grey;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
 `

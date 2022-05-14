@@ -21,4 +21,5 @@ const Des = styled.p`
     display: flex;
     width: 70%;
     margin-left: 15%;
+    color: black;
 `
