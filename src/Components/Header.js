@@ -17,7 +17,7 @@ const Header = () => {
                         <FaArrowRight className='btnText2' />
                     </div>
                 </div>
-                <div className='button' onClick={() => history.push('/Mars')}> 
+                <div className='button' onClick={() => history.push('/Anniversary')}> 
                     <p className='btnText'>50th Anniversary</p>
                     <div className='btnTwo'> 
                         <FaArrowRight className='btnText2' />
